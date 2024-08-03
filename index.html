@@ -5,10 +5,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Cats</title>
+	<script>
+		window.onload = async () => {
+			const response = await fetch("https://api.thecatapi.com/v1/images/search");
+			const data = await response.json();
+			console.log(data);
+			document.getElementById("img").src = data[0].url;
+
+		}
+	</script>
 </head>
 
 <body>
-	Hello world
+	<div>
+		Hello world
+	</div>
+	<img id="img" width="400px" src="#" alt="Cat">
 </body>
 
 </html>
